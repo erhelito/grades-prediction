@@ -1,23 +1,15 @@
 import csv
 
-grade_for_estimating = []
-list_
+estimated_grades_column = []
+subjects_list = []
 
-with open("notes.csv", newline="") as csvfile:
+with open("grades.csv", newline="") as csvfile:
     reader = csv.reader(csvfile)
     for row in reader:
-        grade_for_estimating.append(row[3])
+        estimated_grades_column.append(row[3])
+        subjects_list.append(row[0])
         
-del grade_for_estimating[0] #delete the label of the column
-liste_matieres.sort()
+    del estimated_grades_column[0] #delete the label of the column
 
-previous_element = ""
+    for grade in estimated_grades_column :
 
-for element in liste_matieres :
-    print(element)
-    if element == previous_element :
-        liste_matieres.remove(element)
-
-    previous_element = element
-
-print(liste_matieres)
