@@ -1,12 +1,13 @@
-Subject,Grade,Estimated grade,Estimated grade (by bot)
+Subject,Grade,Estimated_grade,Estimated_grade_by_bot
 engl,13,18,x
-engl,16,17,x
-fr,18,18,x
-maths,18.5,19,x
-maths,19.5,19,x
-phys,15,17,x
-hist,x,11,x
+engl,16,17,2
+fr,18,18,2
+maths,18.5,19,3
+maths,19.5,19,4
+phys,15,17,5
+hist,x,11,6
 NSI,19,17,x
-maths,16,17,x
-ESsvt,14,16,x
-fr,x,17,x
+maths,16,17,8
+ESbio,14,16,9
+fr,x,17,10
+spa,x,13,3
