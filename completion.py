@@ -3,10 +3,10 @@ from statistics import mean
 
 reader = pandas.read_csv(r"grades.csv")
 
-def subject_with_index(index):
+def get_subject_with_index(index):
     return reader.Subject[index]
 
-def get_grades_for_subject(subject):
+def get_subject_index(subject) :
     grades_index = []
 
     index = 0
@@ -16,14 +16,16 @@ def get_grades_for_subject(subject):
 
         index += 1
 
+    return grades_index
+
+def get_list_of_grades(grades_index):
     grades = reader.Grade
+
     list_of_grades = []
-    
     for index in grades_index :
         list_of_grades.append(grades[index])
 
     list_of_grades_integer = []
-
     for grade in list_of_grades :
         try :
             if str(grade) != "nan" :
@@ -35,16 +37,23 @@ def get_grades_for_subject(subject):
     return list_of_grades_integer
 
 
+
+def get_grades_for_subject(subject):
+    grades_index = get_subject_index(subject)
+    list_of_grades = get_list_of_grades(grades_index)
+
+    return list_of_grades
+
+
 def get_human_estimation(index):
-    human_estimation = reader.Estimated_grade[index]
-    human_estimation = int(human_estimation)
+    human_estimation = int(reader.Estimated_grade[index])
     return human_estimation
 
 
 index = 0
 for grade in reader.Estimated_grade_by_bot :
     if str(grade) == "nan":
-        subject = subject_with_index(index)
+        subject = get_subject_with_index(index)
         print(f"subject to complete : {subject}")
 
         list_of_grades = get_grades_for_subject(subject)
