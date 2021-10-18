@@ -7,6 +7,7 @@ reader = pandas.read_csv(r"grades.csv")
 index = 0
 for grade in reader.Estimated_grade_by_bot :
     if str(grade) == "nan":
+        
         subject = get_subject_with_index(index)
         print(f"subject to complete : {subject}")
 
